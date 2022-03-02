@@ -22,9 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::middleware('auth:sanctum')->group(function () {
-   
+    Route::resource('gardener', GardenerController::class);
+    Route::resource('country', CountryController::class);
+    Route::resource('location', LocationController::class);
+    Route::resource('profile', ProfileController::class);
 });
-Route::resource('gardener', GardenerController::class);
-Route::resource('country', CountryController::class);
-Route::resource('location', LocationController::class);
-Route::resource('profile', ProfileController::class);

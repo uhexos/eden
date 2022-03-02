@@ -10,12 +10,14 @@ class Location extends Model
     use HasFactory;
     public function country()
     {
-        return $this->belongsToMany(Country::class);
+        return $this->belongsTo(Country::class);
     }
+
     public function gardeners()
     {
         return $this->hasMany(gardener::class);
     }
+    
     public function customers()
     {
         return $this->hasMany(profile::class);
