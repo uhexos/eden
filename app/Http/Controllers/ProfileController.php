@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return response()->json(profile::with('gardener', 'location', 'country')->get());
+        return response()->json(profile::with('gardeners', 'location', 'country')->get());
     }
 
     /**
@@ -51,9 +51,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(profile $profile)
+    public function show($id)
     {
-        return $profile->load('gardeners');
+        return response()->json(profile::with('gardeners', 'location', 'country')->findOrFail($id));
     }
 
     /**
