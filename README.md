@@ -12,4 +12,4 @@ api/gardners
 api/country
 
  and these are accessible through the ui deployed on heroku at http://edenugo.herokuapp.com/ default credentials have been setup for your convenience  but you can also register a new account if you wish. When you register you  are automatically assigned a gardener in your location to handle your needs.
-If a gardener doesnt exist in your location yet the profile creation form fails and throws an error but the user is save and can try again at a later date
+If a gardener doesnt exist in your location during account registration, the profile creation form fails and throws an error but the user credntials are saved and the user can try again at a later date
