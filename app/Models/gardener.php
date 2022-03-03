@@ -16,4 +16,7 @@ class gardener extends Model
     {
         return $this->hasOne(Country::class);
     }
+    public function customer(){
+        return $this->belongsToMany(profile::class);
+    }
 }

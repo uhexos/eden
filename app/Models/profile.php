@@ -10,10 +10,13 @@ class profile extends Model
     use HasFactory;
     public function location()
     {
-        return $this->hasOne(Location::class);
+        return $this->belongsTo(Location::class);
     }
     public function country()
     {
-        return $this->hasOne(Country::class);
+        return $this->belongsTo(Country::class);
+    }
+    public function gardeners(){
+        return $this->belongsToMany(gardener::class);
     }
 }
