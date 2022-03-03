@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\gardener;
 use App\Models\profile;
 use Illuminate\Http\Request;
 
@@ -39,10 +40,13 @@ class ProfileController extends Controller
         $customer->user_id = $request->user()->id;
         if (profile::where('user_id', '=', $request->user()->id)->exists()) {
             $profile =  profile::where('user_id', '=', $request->user()->id)->get();
-            return $profile->load('country', 'location');
+            return response()->json($profile->load('gardeners', 'location', 'country'));
         }
         $customer->save();
-        return response()->json($customer->load('country', 'location'));
+        $gardener = gardener::where('location_id', $customer->location_id)->get()->random();
+        // return dd($gardener);
+        $customer->gardeners()->save($gardener);
+        return response()->json($customer->load('gardeners', 'location', 'country'));
     }
 
     /**
