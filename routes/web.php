@@ -31,6 +31,9 @@ Route::get('/gardeners', function () {
 Route::get('/customers', function () {
     return view('customers');
 });
+Route::get('/customers/{id}', function () {
+    return view('customers-detail');
+});
 Route::get('/countries', function () {
     return view('countries');
 });

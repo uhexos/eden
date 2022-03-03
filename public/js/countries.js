@@ -38,7 +38,6 @@ function saveNewCountry() {
 
 document.getElementById('saveNewCountryButton').addEventListener('click', (e) => {
     e.preventDefault();
-    alert('clicke')
     saveNewCountry();
 });
 document.getElementById('addCountryForm').addEventListener('submit', (e) => {
