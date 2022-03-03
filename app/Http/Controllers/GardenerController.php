@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\gardener;
 use Illuminate\Http\Request;
 
 class GardenerController extends Controller
@@ -13,7 +14,7 @@ class GardenerController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(gardener::with('garde$gardeners', 'location', 'country')->get());
     }
 
     /**
@@ -24,7 +25,25 @@ class GardenerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'firstname' => 'required|max:100',
+            'lastname' => 'required|max:100',
+            'country_id' => 'required|exists:countries,id',
+            'location_id' => 'required|exists:locations,id',
+        ]);
+        $gardener  =  new gardener();
+        $gardener->firstname = $validated['firstname'];
+        $gardener->lastname =  $validated['lastname'];
+        $gardener->country_id = $validated['country_id'];
+        $gardener->location_id = $validated['location_id'];
+        $gardener->user_id = $request->user()->id;
+        if (gardener::where('user_id', '=', $request->user()->id)->exists()) {
+            $profile =  gardener::where('user_id', '=', $request->user()->id)->get();
+            return response()->json($profile->load('customers', 'location', 'country'));
+        }
+        $gardener->save();
+        return response()->json($gardener->load('customers', 'location', 'country'));
     }
 
     /**
@@ -35,7 +54,7 @@ class GardenerController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json(gardener::with('garde$gardeners', 'location', 'country')->findOrFail($id));
     }
 
     /**
