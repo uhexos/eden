@@ -50,7 +50,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.html">Need an account? Sign up!</a>
+                                    <div class="small"><a href="/register">Need an account? Sign up!</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function login() {
@@ -100,7 +99,9 @@
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault()
             axios.get('api/user')
-                .then((response) => {})
+                .then((response) => {
+                    window.location.href = "/dashboard";
+                })
                 .catch(function(error) {
                     // if no user is logged in attempt to login
                     login()
