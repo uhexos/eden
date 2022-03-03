@@ -1,7 +1,7 @@
-let table = $('#countriesTable').DataTable({
+let table = $('#locationsTable').DataTable({
     responsive: true,
     ajax: {
-        'url': '/api/country',
+        'url': '/api/location',
         'type': 'GET',
         // cache: false,
         dataSrc: ''
@@ -12,7 +12,7 @@ let table = $('#countriesTable').DataTable({
         {
             data: 'name',
             render: function (data, type, row, meta) {
-                return '<a href="/api/country/' + row['id'] + '">' + data + '</a>';
+                return '<a href="/api/location/' + row['id'] + '">' + data + '</a>';
             }
         },
         // {

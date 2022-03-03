@@ -14,7 +14,7 @@ class GardenerController extends Controller
      */
     public function index()
     {
-        return response()->json(gardener::with('garde$gardeners', 'location', 'country')->get());
+        return response()->json(gardener::with('customers', 'location', 'country')->get());
     }
 
     /**
@@ -54,7 +54,7 @@ class GardenerController extends Controller
      */
     public function show($id)
     {
-        return response()->json(gardener::with('garde$gardeners', 'location', 'country')->findOrFail($id));
+        return response()->json(gardener::with('customers', 'location', 'country')->findOrFail($id));
     }
 
     /**

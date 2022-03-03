@@ -29,5 +29,5 @@ Route::get('/countries', function () {
     return view('countries');
 });
 Route::get('/locations', function () {
-    return view('countries');
+    return view('locations');
 });
