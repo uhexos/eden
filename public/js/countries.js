@@ -22,3 +22,21 @@ let table = $('#countriesTable').DataTable({
 
     ]
 });
+
+function saveNewCountry() {   
+    axios.post('/api/country', {
+            "name": document.getElementById('countryName').value,
+        })
+        .then(function (response) {
+            console.log(response.data);
+            table.ajax.reload();
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+document.getElementById('saveNewCountryButton').addEventListener('click', (e) => {
+    e.preventDefault();
+    saveNewCountry();
+});
