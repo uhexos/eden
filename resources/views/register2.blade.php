@@ -88,7 +88,7 @@
             var location_id = select.options[select.selectedIndex].value;
             var select2 = document.getElementById('inputCountry');
             var country_id = select2.options[select.selectedIndex].value;
-            axios.post('api/customer', {
+            axios.post('/api/customer', {
                     firstname: document.getElementById('inputName').value,
                     lastname: document.getElementById('inputName').value,
                     country_id: country_id,
@@ -103,7 +103,7 @@
                     alert(error);
                 });
         });
-        axios.get('api/user')
+        axios.get('/api/user')
             .then((response) => {
                 // must log out to register =
                 !response.data.name ? window.location.href = "/" : "";
@@ -117,7 +117,7 @@
         function getCountries() {
             document.getElementById("inputCountry").innerHTML = "";
 
-            axios.get('api/country')
+            axios.get('/api/country')
                 .then(function(response) {
                     var select = document.getElementById("inputCountry");
 
@@ -136,7 +136,7 @@
         function getLocations() {
             document.getElementById("inputLocation").innerHTML = "";
 
-            axios.get('api/location')
+            axios.get('/api/location')
                 .then(function(response) {
                     var select = document.getElementById("inputLocation");
                     response.data.map(country => {

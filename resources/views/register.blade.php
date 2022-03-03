@@ -119,7 +119,7 @@
                     alert(error);
                 });
         });
-        axios.get('api/user')
+        axios.get('/api/user')
             .then((response) => {
                 // must log out to register =
                 response.data.name ? window.location.href = "/dashboard":"";

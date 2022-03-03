@@ -26,7 +26,7 @@ let table = $('#locationsTable').DataTable({
 function getCountries() {
     document.getElementById("countryName").innerHTML = "";
 
-    axios.get('api/country')
+    axios.get('/api/country')
         .then(function (response) {
             var select = document.getElementById("countryName");
 

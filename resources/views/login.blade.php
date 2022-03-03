@@ -98,7 +98,7 @@
         }
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault()
-            axios.get('api/user')
+            axios.get('/api/user')
                 .then((response) => {
                     window.location.href = "/dashboard";
                 })
