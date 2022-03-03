@@ -49,7 +49,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" value="Send message" id="saveNewLocationButton" />
+                            <input type="submit" class="btn btn-primary" value="Create" id="saveNewLocationButton" />
                         </div>
                     </form>
                 </div>
