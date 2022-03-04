@@ -21,6 +21,8 @@
                         <tr>
                             <th>id</th>
                             <th>Name</th>
+                            <th>No. Customers</th>
+                            <th>No Gardners</th>
                         </tr>
                     </thead>
                 </table>

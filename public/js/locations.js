@@ -15,11 +15,12 @@ let table = $('#locationsTable').DataTable({
                 return '<a href="/api/location/' + row['id'] + '">' + data + '</a>';
             }
         },
-        // {
-        //     data: 'created_at'
-        // },
-        // { data: 'updated_at' },
-
+        {
+            data: 'customers_count'
+        },
+        {
+            data: 'gardeners_count'
+        }
     ]
 });
 
