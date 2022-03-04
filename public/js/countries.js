@@ -15,15 +15,21 @@ let table = $('#countriesTable').DataTable({
                 return '<a href="/api/country/' + row['id'] + '">' + data + '</a>';
             }
         },
-        // {
-        //     data: 'created_at'
-        // },
-        // { data: 'updated_at' },
+        {
+            data: 'customers_count'
+        },
+        {
+            data: 'gardeners_count'
+        },
+        {
+            data: 'locations_count'
+        },
+        
 
     ]
 });
 
-function saveNewCountry() {   
+function saveNewCountry() {
     axios.post('/api/country', {
             "name": document.getElementById('countryName').value,
         })

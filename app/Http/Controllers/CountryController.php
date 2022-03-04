@@ -14,7 +14,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        return response()->json(Country::all());
+        return response()->json(Country::withCount('customers', 'locations', 'gardeners')->get());
     }
 
     /**
@@ -33,5 +33,14 @@ class CountryController extends Controller
         $country->save();
         return response()->json($country);
     }
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return response()->json(Country::with('customers', 'locations', 'gardeners')->findOrFail($id));
+    }
 }

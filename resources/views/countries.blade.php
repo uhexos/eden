@@ -20,6 +20,9 @@
                         <tr>
                             <th>id</th>
                             <th>Name</th>
+                            <th>No. Customers</th>
+                            <th>No Gardners</th>
+                            <th>No. Locations</th>
                         </tr>
                     </thead>
                 </table>
