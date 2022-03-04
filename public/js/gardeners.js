@@ -18,7 +18,7 @@ let table = $('#gardenersTable').DataTable({
         {
             data: 'created_at'
         },
-        // { data: 'updated_at' },
+        { data: 'customers_count' },
 
     ]
 });

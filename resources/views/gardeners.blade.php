@@ -17,6 +17,7 @@
                             <th>id</th>
                             <th>Name</th>
                             <th>Joined</th>
+                            <th>No. Customers</th>
                         </tr>
                     </thead>                 
                 </table>

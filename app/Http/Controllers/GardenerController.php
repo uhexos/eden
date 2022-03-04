@@ -14,7 +14,7 @@ class GardenerController extends Controller
      */
     public function index()
     {
-        return response()->json(gardener::with('customers', 'location', 'country')->get());
+        return response()->json(gardener::withCount('customers', 'location', 'country')->get());
     }
 
     /**

@@ -5,7 +5,16 @@
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
-        <p>Please use the links in the menu to navigate</p>
+        <h1>Eden Life work sample by NWOKOROBIA UGOCHUKWU</h1>
+        <p>Please use the links in the menu to navigate through the available endpoint</p>
+        <p>List endpoints are render as a table extrating and displaying key information while details reviews are returned
+            as json</p>
+        <p>The application uses blade as a templating engine but all data is rendered client side and can be verified through the network tab in the developer tools</p>
+        
+        <h1>PLEASE ENSURE THAT YOU ARE LOGGED IN WHEN MAKING A REQUEST</h1>
+        <p>You can confirm you are authenitcated by looking for a name in the menu</p>
+        <p>Any auth errors are fixed by clicking logout from the top menu and logging in again</p>
+        
         {{-- <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
